@@ -1,4 +1,4 @@
-package teacherExample;
+package basics;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
