@@ -28,4 +28,5 @@ public class MethodsNextLevel {
         System.out.println("Reversed number is: " + reversedNumber);
         return reversedNumber == number;
     }
+
 }
