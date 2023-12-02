@@ -6,8 +6,13 @@ public class Homework7 {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        printArray(selectionSort(initializeArray()));
-        task1();
+      //  printArray(selectionSort(initializeArray()));
+        printArray(descendingSort(initializeArray()));
+      //  task1();
+      //  task2();
+      //  task3();
+      //  task4();
+      //  task5();
     }
 
     static int[] initializeArray() {
@@ -34,7 +39,55 @@ public class Homework7 {
         System.out.println("}");
     }
 
+    public static int[] selectionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int min = array[i];//5
+            int min_i = i;//0
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j]<min) {//4<5//3<4//2<3//1<2
+                    min = array[j];//4//3//2//1
+                    min_i = j;//1//2/3//4
+                }
+            }
+            if (i != min_i) {
+                int tmp = array[i];//0
+                array[i] = array[min_i];//0=4
+                array[min_i] = tmp;//0
+            }
+        }
+        return array;
+}
 
+    static int[] descendingSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int max = array[i];
+            int max_i = i;
+
+            for (int j = i+1; j < array.length; j++) {
+                if (array[j]>max) {
+                    max = array[j];
+                    max_i = j;
+                }
+
+                if (i != max_i) {
+                    int tmp = array[i];
+                    array[i] = array[max_i];
+                    array[max_i] = tmp;
+                }
+            }
+
+        }
+        return array;
+        }
+
+    static void sumArray(int arr[]) {
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        System.out.println("Sum values of Array = " + sum);
+    }
 
 //    Exercise 1: Write a program to store elements in an array and print it
 //    Sample Output
@@ -82,61 +135,43 @@ public class Homework7 {
 //    Sum Values of Array = 55
 
     static void task3() {
-        int sum = 0;
-        int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-        for (int i = 0; i < 10; i++) {
-            sum += array[i];
-        }
-        System.out.println("Sum values of Array = " + sum);
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        sumArray(array);
     }
 //    Exercise 4: Write a program to Sort Numeric Array In Ascending Order
 //    Sample Output
 //    Array = {23, 5, 67, 20, 3, 30, 79, 3, 70, 2}
 //    Ascending Order = {2, 3, 3, 5, 20, 23, 30, 67, 70, 79}
-    public static int[] selectionSort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            int min = array[i];
-            int min_i = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j]<min) {
-                    min = array[j];
-                    min_i = j;
-                }
-            }
-            if (i != min_i) {
-                int tmp =array[i];
-                array[i] = array[min_i];
-                array[min_i] = tmp;
-            }
-        }
-        return array;
-}
+    //{5, 4, 3, 2, 1}
 
-//    Exercise 5: Write a program to Sort Numeric Array In Descending Order
+    static void task4() {
+        int[] array = {23, 5, 67, 20, 3, 30, 79, 3, 70, 2};
+        printArray(array);
+        printArray(selectionSort(array));
+    }
+
+    //    Exercise 5: Write a program to Sort Numeric Array In Descending Order
 //    Sample Output
 //    Array = {23, 5, 67, 20, 3, 30, 79, 3, 70, 2}
 //    Descending Order = {79, 70, 67, 30, 23, 20, 5, 3, 3, 2}
-    public static void descendingSort(int[] array) {
-
-        // Разворот порядка элементов массива для получения убывающего порядка
-        for (int i = 0; i < array.length / 2; i++) {
-            int temp = array[i];
-            array[i] = array[array.length - 1 - i];
-            array[array.length - 1 - i] = temp;
-        }
+    static void task5() {
+        int[] array = {23, 5, 67, 20, 3, 30, 79, 3, 70, 2};
+        printArray(array);
+        printArray(descendingSort(array));
     }
 
-}
-
-//    static void sortArray(int[] arr) {
-//        int n = arr.length
-//    }
-
+    static void task6() {
 //    Exercise 6: Write a program to array elements to print cubic values
 //    Sample Output
 //    Array = {1, 2, 3, 4, 5}
 //    Cubic Array Elements =1 8 27 64 125
+    }
+
+}
+
+
+
+
 //    Exercise 7: Write a program to find the maximum and minimum element in an array
 //    Sample Output
 //    Array = {23, 4, 32, 5, 75}
