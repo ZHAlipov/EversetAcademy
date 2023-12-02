@@ -13,11 +13,6 @@ public class CinemaSystem {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String args[]) {
-        //stage1();
-        //stage1V2();
-        //stage2();
-        //stage3();
-        //stage4-5
         initializeCinemaHall();
         printSeats();
         menu();
