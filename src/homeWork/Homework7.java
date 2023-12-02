@@ -1,26 +1,26 @@
 package homeWork;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Homework7 {
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        task0();
+        printArray(selectionSort(initializeArray()));
         task1();
-        task3();
-        //task4
-        int[] array = {23, 5, 67, 20, 3, 30, 79, 3, 70, 2};
-        //task4
-        printArray(array);
-        selectionSort(array);
-        printArray(array);
-        //task5
-//        printArray(array);
-//        Arrays.sort(array);
-//        descendingSort(array);
-//        printArray(array);
     }
 
+    static int[] initializeArray() {
+        System.out.print("Введите размер массива: \n");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.printf("Введите значение массива индекса %d%n", i);
+            arr[i] = scanner.nextInt();
+        }
+        return arr;
+    }
 
     public static void printArray(int[] array) {
         // Вывод отсортированного массива
@@ -34,32 +34,7 @@ public class Homework7 {
         System.out.println("}");
     }
 
-    static double TriangleP(double a, double h) {
-        // Находим боковую сторону b с использованием теоремы Пифагора
-        double b = Math.sqrt(Math.pow(a / 2, 2) + Math.pow(h, 2));
 
-        // Находим периметр треугольника
-        double perimeter = 2 * b + a;
-
-        return perimeter;
-    }
-
-    public static void task0() {
-        //task0
-        // Примеры трех треугольников с заданными основаниями и высотами
-        double a1 = 8.0, h1 = 6.0;
-        double a2 = 10.0, h2 = 4.0;
-        double a3 = 12.0, h3 = 8.0;
-        // Вычисляем периметры с использованием функции TriangleP
-        double perimeter1 = TriangleP(a1, h1);
-        double perimeter2 = TriangleP(a2, h2);
-        double perimeter3 = TriangleP(a3, h3);
-
-        // Выводим результаты
-        System.out.println("Периметр треугольника 1: " + perimeter1);
-        System.out.println("Периметр треугольника 2: " + perimeter2);
-        System.out.println("Периметр треугольника 3: " + perimeter3);
-    }
 
 //    Exercise 1: Write a program to store elements in an array and print it
 //    Sample Output
@@ -119,22 +94,23 @@ public class Homework7 {
 //    Sample Output
 //    Array = {23, 5, 67, 20, 3, 30, 79, 3, 70, 2}
 //    Ascending Order = {2, 3, 3, 5, 20, 23, 30, 67, 70, 79}
-public static void  selectionSort(int[] array) {
-    for (int i = 0; i < array.length; i++) {
-        int min = array[i];
-        int min_i = i;
-        for (int j = i + 1; j < array.length; j++) {
-            if (array[j]<min) {
-                min = array[j];
-                min_i = j;
+    public static int[] selectionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int min = array[i];
+            int min_i = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j]<min) {
+                    min = array[j];
+                    min_i = j;
+                }
+            }
+            if (i != min_i) {
+                int tmp =array[i];
+                array[i] = array[min_i];
+                array[min_i] = tmp;
             }
         }
-        if (i != min_i) {
-            int tmp =array[i];
-            array[i] = array[min_i];
-            array[min_i] = tmp;
-        }
-    }
+        return array;
 }
 
 //    Exercise 5: Write a program to Sort Numeric Array In Descending Order
