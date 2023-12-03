@@ -78,15 +78,33 @@ public class CinemaSystem {
         int nBuyRow = scanner.nextInt();
         System.out.println("Введите место: ");
         int nBuySeat = scanner.nextInt();
+        int nFreePlace = 0;
 
-        if (nBuyRow-1 > rows || nBuySeat-1 > seats) {
-            System.out.println("Such seat doesn’t exist");
-        } else if (cinemaHall[nBuyRow - 1][nBuySeat - 1] == 'S') {
-            cinemaHall[nBuyRow - 1][nBuySeat - 1] = 'B';
-            System.out.println("Price: 10$");
-            soldTickets += 10;
-        } else if (cinemaHall[nBuyRow - 1][nBuySeat - 1] == 'B') {
-            System.out.println("This seat is already booked!");
+
+        //"Если же мест для покупки не осталось, то выводите сообщение All seats are booked!"
+        //Посчитать циклом количество свободных мест (S)
+        //Если cntS = 0 то
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < seats; j++) {
+                if (cinemaHall[i][j] == 'S') {
+                    nFreePlace ++;
+                }
+            }
+        }
+
+        if (nFreePlace == 0) {
+            System.out.println("All seats are booked!");
+        } else {
+            if (nBuyRow-1 > rows || nBuySeat-1 > seats) {
+                System.out.println("Such seat doesn’t exist");
+            } else if (cinemaHall[nBuyRow - 1][nBuySeat - 1] == 'S') {
+                cinemaHall[nBuyRow - 1][nBuySeat - 1] = 'B';
+                System.out.println("Price: 10$");
+                soldTickets += 10;
+            } else if (cinemaHall[nBuyRow - 1][nBuySeat - 1] == 'B') {
+                System.out.println("This seat is already booked!");
+            }
         }
     }
 
