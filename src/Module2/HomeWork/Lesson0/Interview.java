@@ -1,4 +1,4 @@
-package Module2.HomeWork.HW0;
+package Module2.HomeWork.Lesson0;
 
 public class Interview {
 //    **Part1**: Создайте класс Interview. В данном классе имееются следующие *атрибуты*: *interviewer, interviewee, date,
@@ -9,11 +9,11 @@ public class Interview {
 //    Методы с префиксом set.. ничего не возвращают, однако, их задача присвоить значение для полей.
 //    **Part3**: Теперь создайте 3 объекта класса Interview. Для каждого объекта инициализируйте значения поле через set..
 //    методы и выведите информацию по объекту используя get.. методы.
-    public String interviewer;
-    public String interviewee;
-    public String date;
-    public String topic;
-    public int length;
+    private String interviewer;
+    private String interviewee;
+    private String date;
+    private String topic;
+    private int length;
 
     public void setInterviewer(String interviewer) {
         this.interviewer = interviewer;
@@ -49,6 +49,8 @@ public class Interview {
     public void getLength() {
         System.out.println("length: " + length);
     }
+
+
 }
 
 class InterviewTask {

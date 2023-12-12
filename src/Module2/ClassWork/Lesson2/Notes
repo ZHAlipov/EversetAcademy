@@ -1,0 +1,5 @@
+Модификаторы доступа:
+- **private** — available only inside a class;
+- **package-private** (also known as **default**, implicit) — available for all classes in the same package;
+- **protected** — available for classes in the same package and for subclasses (will be covered later);
+- **public** — available for all classes everywhere.

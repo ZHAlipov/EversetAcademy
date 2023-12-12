@@ -1,4 +1,4 @@
-package Module2.HomeWork.HW0;
+package Module2.HomeWork.Lesson0;
 import java.util.Arrays;
 
 public class Person {

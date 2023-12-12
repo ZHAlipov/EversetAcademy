@@ -1,4 +1,4 @@
-package Module2.HomeWork.HW0;
+package Module2.HomeWork.Lesson0;
 
 public class Task {
 //    Part1: Создайте класс Task. Данный класс состоит из данных атрибутов: description, type, assignee, issuer, issueDate.
