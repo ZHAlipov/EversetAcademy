@@ -7,8 +7,11 @@ public class Person {
     //– Один конструктор не должен принимать аргументов и инициализировать **`name`** и **`age`** значениями по умолчанию.
     //– Другой конструктор должен принимать **`name`** и **`age`** в качестве параметров и инициализировать переменные экземпляра.
 
-    private String name;
-    private int age;
+    //Реализуйте метод равенства в классе Person из задачи 4.
+    //Метод должен возвращать true, если имя и возраст двух объектов Person равны, и false в противном случае.
+
+    private String name = "Adam";
+    private int age = 18;
 
     public String getName() {
         return name;
@@ -33,13 +36,23 @@ public class Person {
     }
 
     public Person() {
-        this.name = "Noname";
-        this.age = 0;
     }
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Person that = (Person) obj;
+        return name == that.name && age == that.age;
     }
 
 }
@@ -56,6 +69,14 @@ class PersonTest {
 
     Person person3 = new Person("Roman", 45);
     person3.getInfo();
+
+    Person person4 = new Person("Roman", 45);
+    person4.getInfo();
+
+        System.out.println(person1.equals(person2));
+        System.out.println(person2.equals(person3));
+        System.out.println(person3.equals(person4));
+
 
     }
 }
