@@ -10,6 +10,12 @@ public class Person {
     //Реализуйте метод равенства в классе Person из задачи 4.
     //Метод должен возвращать true, если имя и возраст двух объектов Person равны, и false в противном случае.
 
+    //В классе Person создайте метод, устанавливающий возраст человека.
+    //Используйте ключевое слово this для ссылки на переменную экземпляра age.
+
+    //- Реализуйте метод **`toString`** в классе **`Person`** .
+    //– Метод должен возвращать строковое представление объекта **`Person`** в формате `Person[name='…', age=…]`.
+
     private String name = "Adam";
     private int age = 18;
 
@@ -55,6 +61,11 @@ public class Person {
         return name == that.name && age == that.age;
     }
 
+    @Override
+    public String toString() {
+        return "Person[name='" + name + "', age=" + age + "]";
+    }
+
 }
 
 class PersonTest {
@@ -76,6 +87,8 @@ class PersonTest {
         System.out.println(person1.equals(person2));
         System.out.println(person2.equals(person3));
         System.out.println(person3.equals(person4));
+
+        System.out.println("\n" + person1.toString());
 
 
     }

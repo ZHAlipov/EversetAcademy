@@ -70,15 +70,15 @@ public class Student {
             System.out.println(student1.getStudentId());
             System.out.println(student1.getName());
             System.out.println(student1.getGradesMath());
-            System.out.println(student1.getGradesPhisic());
             System.out.println(student1.getGradesGeography());
+            System.out.println(student1.getGradesPhisic());
             System.out.println();
 
             Student student2 = new Student("Tony", 256, 3, 3, 4);
             System.out.println(student2.getStudentId());
             System.out.println(student2.getName());
             System.out.println(student2.getGradesMath());
-            System.out.println(student2.getGradesPhisic());
             System.out.println(student2.getGradesGeography());
+            System.out.println(student2.getGradesPhisic());
         }
     }
