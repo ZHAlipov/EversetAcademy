@@ -1,4 +1,4 @@
-package Module2.HomeWork.Lesson3;
+package Module2.HomeWork.Lesson3.Ex1;
 
 public class Author {
     private String name;
@@ -23,6 +23,6 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author [name=" + name + ",email=" + email + "]";
+        return "Author [name=\"%s\",email=\"%s\"]".formatted(this.name, this.email);
     }
 }

@@ -1,4 +1,4 @@
-package Module2.HomeWork.Lesson3;
+package Module2.HomeWork.Lesson3.Ex1;
 
 public class Book {
     private String isbn;
