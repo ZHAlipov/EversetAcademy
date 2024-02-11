@@ -9,7 +9,7 @@ public class Runner {
         System.out.println(s1.getPerimeter());     // which version?
         System.out.println(s1.getColor());
         System.out.println(s1.isFilled());
-        System.out.println(((Circle) s1).getRadius());
+        //System.out.println(s1.getRadius()); // ожидаемый объект Circle, а мы передаем Shape
 
         Circle c1 = (Circle)s1;                   // Downcast back to Circle
         System.out.println(c1);
@@ -19,12 +19,14 @@ public class Runner {
         System.out.println(c1.isFilled());
         System.out.println(c1.getRadius());
 
+        //Shape s2 = new Shape(); // нельзя создавать экземпляр по абстракному классу
+
         Shape s3 = new Rectangle(1.0, 2.0, "red", false);   // Upcast
         System.out.println(s3);
         System.out.println(s3.getArea());
         System.out.println(s3.getPerimeter());
         System.out.println(s3.getColor());
-        System.out.println(((Rectangle) s3).getLength());
+        //System.out.println(s3.getLength()); // ожидаемый объект Rectangle, а мы передаем Shape
 
         Rectangle r1 = (Rectangle)s3;   // downcast
         System.out.println(r1);
@@ -36,7 +38,7 @@ public class Runner {
         System.out.println(s4);
         System.out.println(s4.getArea());
         System.out.println(s4.getColor());
-        System.out.println(((Square) s4).getSide());
+        //System.out.println(s4.getSide()); // ожидаемый объект Square, а мы передаем Shape
 
 // Take note that we downcast Shape s4 to Rectangle,
 //  which is a superclass of Square, instead of Square
@@ -44,7 +46,7 @@ public class Runner {
         System.out.println(r2);
         System.out.println(r2.getArea());
         System.out.println(r2.getColor());
-        //System.out.println(r2.getSide());
+        //System.out.println(r2.getSide()); // данный метод есть в дочернем классе, но он не входит в область видимости родителя
         System.out.println(r2.getLength());
 
 // Downcast Rectangle r2 to Square
