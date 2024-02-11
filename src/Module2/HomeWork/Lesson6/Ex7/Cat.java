@@ -1,0 +1,8 @@
+package Module2.HomeWork.Lesson6.Ex7;
+
+public class Cat extends Animal {
+    @Override
+    public void greeting() {
+        System.out.println("Meow!");
+    }
+}
