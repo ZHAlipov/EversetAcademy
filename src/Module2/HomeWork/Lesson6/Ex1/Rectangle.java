@@ -5,7 +5,7 @@ public class Rectangle extends Shape {
     protected double width = 1.0;
     protected double length = 1.0;
 
-    public Rectangle() {;}
+    public Rectangle() {}
 
     public Rectangle(double width, double length) {
         this.width = width;

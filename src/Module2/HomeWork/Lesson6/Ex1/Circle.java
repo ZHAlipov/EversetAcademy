@@ -4,7 +4,7 @@ public class Circle extends Shape {
     
     protected double radius = 1.0;
     
-    public Circle() {;}
+    public Circle() {}
     
     public Circle(double radius) {
         this.radius = radius;
