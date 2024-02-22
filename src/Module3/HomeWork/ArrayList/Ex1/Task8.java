@@ -1,7 +1,6 @@
 package Module3.HomeWork.ArrayList.Ex1;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Task8 {
@@ -14,13 +13,15 @@ public class Task8 {
         strings.add("B");
         strings.add("D");
         strings.add("E");
-        strings.add("А");
+        strings.add("A");
+        strings.add("Red");
+        strings.add("Blue");
 
+        System.out.println(strings);
+        Collections.sort(strings);
         System.out.println(strings);
         Collections.sort(strings, String.CASE_INSENSITIVE_ORDER);
         System.out.println(strings);
-
-
     }
 
 }

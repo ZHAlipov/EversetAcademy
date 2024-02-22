@@ -12,11 +12,16 @@ public class Task7 {
         numbers.add(9);
         System.out.println(numbers);
 
-        for(Integer el: numbers) {
-            if (el == 5) {
-                System.out.println("Элемент со значением 5 найден по индексу: " + el);
+            if (numbers.contains(5)) {
+                System.out.println("Элемент со значением 5 найден в списке numbers");
             }
-        }
+
+            if (numbers.contains(11)) {
+                System.out.println("Элемент со значением 11 найден в списке numbers");
+            } else {
+                System.out.println("Элемент со значением 11 не найден в списке numbers");
+            }
+
 
     }
 }
